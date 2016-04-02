@@ -1,0 +1,2779 @@
+Assessment Summary
+Compilation:  PASSED
+Style:        FAILED
+Findbugs:     No potential bugs found.
+API:          PASSED
+
+Correctness:  42/42 tests passed
+Memory:       8/8 tests passed
+Timing:       17/17 tests passed
+
+Aggregate score: 100.00% [Correctness: 65%, Memory: 10%, Timing: 25%, Style: 0%]
+Assessment Details
+The following files were submitted:
+----------------------------------
+total 16K
+-rw-r--r-- 1 5.0K Feb 21 01:10 Board.java
+-rw-r--r-- 1 3.8K Feb 21 01:10 Solver.java
+-rw-r--r-- 1 3.1K Feb 21 01:10 studentSubmission.zip
+
+
+********************************************************************************
+*          COMPILING                                                           *
+********************************************************************************
+
+
+% javac Board.java
+*-----------------------------------------------------------
+
+================================================================
+
+% javac Solver.java
+*-----------------------------------------------------------
+
+================================================================
+
+
+
+% checkstyle *.java
+*-----------------------------------------------------------
+Solver.java:1: Do not use .* in import statements.
+Solver.java:3: Do not use .* in import statements.
+Solver.java:27:89: Only one statement per line allowed.
+Checkstyle ends with 3 errors.
+
+================================================================
+
+
+% findbugs *.class
+*-----------------------------------------------------------
+
+================================================================
+
+
+Testing the APIs of your programs.
+*-----------------------------------------------------------
+Board:
+
+Solver:
+
+================================================================
+
+
+******************************************************************************
+*          CORRECTNESS
+******************************************************************************
+
+Testing methods in Board
+*-----------------------------------------------------------
+Running 22 total tests.
+
+Tests 5, 6, 13, and 14 rely upon toString() returning results in prescribed format.
+
+Test 1a: Test hamming() with file inputs
+  *  puzzle04.txt
+  *  puzzle00.txt
+  *  puzzle07.txt
+  *  puzzle17.txt
+  *  puzzle27.txt
+  *  puzzle2x2-unsolvable1.txt
+==> passed
+
+Test 1b: Test hamming() with random N-by-N boards
+  *  2-by-2
+  *  3-by-3
+  *  4-by-4
+  *  5-by-5
+  *  9-by-9
+  *  10-by-10
+  *  127-by-127
+==> passed
+
+Test 2a: Test manhattan() with file inputs
+  *  puzzle04.txt
+  *  puzzle00.txt
+  *  puzzle07.txt
+  *  puzzle17.txt
+  *  puzzle27.txt
+  *  puzzle2x2-unsolvable1.txt
+==> passed
+
+Test 2b: Test manhattan() with random N-by-N boards
+  *  2-by-2
+  *  3-by-3
+  *  4-by-4
+  *  5-by-5
+  *  9-by-9
+  *  10-by-10
+  *  127-by-127
+==> passed
+
+Test 3: Test dimension() with random N-by-N boards
+  *  2-by-2
+  *  3-by-3
+  *  4-by-4
+  *  5-by-5
+==> passed
+
+Test 4a: Test toString() with file inputs
+  *  puzzle04.txt
+  *  puzzle00.txt
+  *  puzzle06.txt
+  *  puzzle09.txt
+  *  puzzle23.txt
+  *  puzzle2x2-unsolvable1.txt
+==> passed
+
+Test 4b: Test toString() with random N-by-N boards
+  *  2-by-2
+  *  3-by-3
+  *  4-by-4
+  *  5-by-5
+  *  9-by-9
+  *  10-by-10
+  *  127-by-127
+==> passed
+
+Test 5a: Test neighbors() with file inputs
+  *  puzzle04.txt
+  *  puzzle00.txt
+  *  puzzle06.txt
+  *  puzzle09.txt
+  *  puzzle23.txt
+  *  puzzle2x2-unsolvable1.txt
+==> passed
+
+Test 5b: Test neighbors() with random N-by-N boards
+  *  2-by-2
+  *  3-by-3
+  *  4-by-4
+  *  5-by-5
+  *  9-by-9
+  *  10-by-10
+  *  127-by-127
+==> passed
+
+Test 6a: Test neighbors() of neigbors() with file inputs
+  *  puzzle04.txt
+  *  puzzle00.txt
+  *  puzzle06.txt
+  *  puzzle09.txt
+  *  puzzle23.txt
+  *  puzzle2x2-unsolvable1.txt
+==> passed
+
+Test 6b: Test neighbors() of neighbors() with random N-by-N boards
+  *  2-by-2
+  *  3-by-3
+  *  4-by-4
+  *  5-by-5
+  *  9-by-9
+  *  10-by-10
+==> passed
+
+Test 7a: Test twin() with file inputs
+  *  puzzle04.txt
+  *  puzzle00.txt
+  *  puzzle06.txt
+  *  puzzle09.txt
+  *  puzzle23.txt
+  *  puzzle2x2-unsolvable1.txt
+==> passed
+
+Test 7b: Test twin() with random N-by-N boards
+  *  2-by-2
+  *  3-by-3
+  *  4-by-4
+  *  5-by-5
+  *  9-by-9
+  *  10-by-10
+==> passed
+
+Test 8a: Test isGoal() on file inputs
+  *  puzzle00.txt
+  *  puzzle04.txt
+  *  puzzle16.txt
+  *  puzzle06.txt
+  *  puzzle09.txt
+  *  puzzle23.txt
+  *  puzzle2x2-unsolvable1.txt
+  *  puzzle3x3-unsolvable1.txt
+  *  puzzle3x3-00.txt
+  *  puzzle4x4-00.txt
+==> passed
+
+Test 8b: Test isGoal() on N-by-N goal boards
+  *  2-by-2
+  *  3-by-3
+  *  4-by-4
+  *  5-by-5
+  *  6-by-6
+  *  100-by-100
+==> passed
+
+Test 9: Check whether two Board objects can be created at the same time
+  *   random 3-by-3 and 3-by-3 boards
+  *   random 4-by-4 and 4-by-4 boards
+  *   random 2-by-2 and 2-by-2 boards
+  *   random 3-by-3 and 4-by-4 boards
+  *   random 4-by-4 and 3-by-3 boards
+==> passed
+
+Test 10a: Check equals()
+  *  reflexive
+  *  symmetric
+  *  checks that individual entries of array are equal
+  *  argument is object of type String
+  *  argument is object of type Object
+  *  argument is null
+  *  argument is Board of different dimension
+==> passed
+
+Test 10b: Test equals() on M-by-M vs. N-by-N goal boards
+  *  M = 2, N = 2
+  *  M = 3, N = 3
+  *  M = 4, N = 4
+  *  M = 2, N = 5
+  *  M = 5, N = 2
+==> passed
+
+Test 11: Check that Board is immutable by changing argument array after
+         construction and making sure Board does not mutate
+==> passed
+
+Test 12: Check that Board is immutable by testing whether methods
+         return the same value, regardless of order in which called
+  *  puzzle10.txt
+  *  puzzle20.txt
+  *  puzzle30.txt
+  *  2-by-2
+  *  3-by-3
+  *  4-by-4
+==> passed
+
+Test 13: Call hamming() on a board that is kth-neighbor of a board
+  * 0th neighbor of puzzle27.txt
+  * 1th neighbor of puzzle27.txt
+  * 2th neighbor of puzzle27.txt
+  * 13th neighbor of puzzle27.txt
+  * 13th neighbor of puzzle00.txt
+  * 13th neighbor of puzzle2x2-unsolvable1.txt
+==> passed
+
+Test 14: Call manhattan() on a board that is a kth-neighbor of a board
+  * 0th neighbor of puzzle27.txt
+  * 1th neighbor of puzzle27.txt
+  * 2th neighbor of puzzle27.txt
+  * 13th neighbor of puzzle27.txt
+  * 13th neighbor of puzzle00.txt
+  * 13th neighbor of puzzle2x2-unsolvable1.txt
+==> passed
+
+
+Total: 22/22 tests passed!
+
+
+================================================================
+
+******************************************************************************
+*          correctness (substituting reference Board.java)
+******************************************************************************
+
+Testing methods in Solver
+*-----------------------------------------------------------
+Running 20 total tests.
+
+Test 1: Call moves() with file inputs
+  *  puzzle00.txt
+loopCount: 2
+
+  *  puzzle01.txt
+loopCount: 3
+
+  *  puzzle02.txt
+loopCount: 4
+
+  *  puzzle03.txt
+loopCount: 8
+
+  *  puzzle04.txt
+loopCount: 6
+
+  *  puzzle05.txt
+loopCount: 8
+
+  *  puzzle06.txt
+loopCount: 8
+
+  *  puzzle07.txt
+loopCount: 17
+
+  *  puzzle08.txt
+loopCount: 15
+
+  *  puzzle09.txt
+loopCount: 19
+
+  *  puzzle10.txt
+loopCount: 12
+
+  *  puzzle11.txt
+loopCount: 38
+
+  *  puzzle12.txt
+loopCount: 22
+
+  *  puzzle13.txt
+loopCount: 21
+
+==> passed
+
+Test 2: Call solution() with file inputs
+  *  puzzle00.txt
+loopCount: 2
+
+  *  puzzle01.txt
+loopCount: 3
+
+  *  puzzle02.txt
+loopCount: 4
+
+  *  puzzle03.txt
+loopCount: 8
+
+  *  puzzle04.txt
+loopCount: 6
+
+  *  puzzle05.txt
+loopCount: 8
+
+  *  puzzle06.txt
+loopCount: 8
+
+  *  puzzle07.txt
+loopCount: 17
+
+  *  puzzle08.txt
+loopCount: 15
+
+  *  puzzle10.txt
+loopCount: 12
+
+  *  puzzle15.txt
+loopCount: 17
+
+==> passed
+
+Test 3: Create two Solver objects at the same time
+  *  puzzle04.txt and puzzle04.txt
+loopCount: 6
+
+loopCount: 6
+
+  *  puzzle00.txt and puzzle04.txt
+loopCount: 2
+
+loopCount: 6
+
+  *  puzzle04.txt and puzzle00.txt
+loopCount: 6
+
+loopCount: 2
+
+==> passed
+
+Test 4a: Call isSolvable() with file inputs
+  *  puzzle01.txt
+loopCount: 3
+
+  *  puzzle03.txt
+loopCount: 8
+
+  *  puzzle04.txt
+loopCount: 6
+
+  *  puzzle17.txt
+loopCount: 428
+
+  *  puzzle3x3-unsolvable1.txt
+loopCount: 1493
+
+  *  puzzle3x3-unsolvable2.txt
+loopCount: 827
+
+  *  puzzle4x4-unsolvable.txt
+loopCount: 21
+
+==> passed
+
+Test 4b: Call isSolvable() on random N-by-N puzzles
+  *  100 random 2-by-2 boards
+loopCount: 8
+
+loopCount: 4
+
+loopCount: 21
+
+loopCount: 6
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 4
+
+loopCount: 9
+
+loopCount: 13
+
+loopCount: 4
+
+loopCount: 13
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 2
+
+loopCount: 10
+
+loopCount: 13
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 6
+
+loopCount: 5
+
+loopCount: 6
+
+loopCount: 9
+
+loopCount: 3
+
+loopCount: 9
+
+loopCount: 13
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 4
+
+loopCount: 3
+
+loopCount: 6
+
+loopCount: 8
+
+loopCount: 8
+
+loopCount: 6
+
+loopCount: 3
+
+loopCount: 3
+
+loopCount: 5
+
+loopCount: 13
+
+loopCount: 6
+
+loopCount: 13
+
+loopCount: 9
+
+loopCount: 2
+
+loopCount: 6
+
+loopCount: 13
+
+loopCount: 4
+
+loopCount: 3
+
+loopCount: 13
+
+loopCount: 9
+
+loopCount: 6
+
+loopCount: 21
+
+loopCount: 8
+
+loopCount: 3
+
+loopCount: 9
+
+loopCount: 4
+
+loopCount: 3
+
+loopCount: 13
+
+loopCount: 3
+
+loopCount: 3
+
+loopCount: 6
+
+loopCount: 3
+
+loopCount: 9
+
+loopCount: 3
+
+loopCount: 13
+
+loopCount: 8
+
+loopCount: 10
+
+loopCount: 9
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 2
+
+loopCount: 4
+
+loopCount: 4
+
+loopCount: 3
+
+loopCount: 9
+
+loopCount: 8
+
+loopCount: 21
+
+loopCount: 4
+
+loopCount: 13
+
+loopCount: 8
+
+loopCount: 10
+
+loopCount: 2
+
+loopCount: 10
+
+loopCount: 21
+
+loopCount: 21
+
+loopCount: 3
+
+loopCount: 21
+
+loopCount: 21
+
+loopCount: 10
+
+loopCount: 10
+
+loopCount: 5
+
+loopCount: 13
+
+loopCount: 13
+
+loopCount: 9
+
+loopCount: 6
+
+loopCount: 10
+
+loopCount: 13
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 2
+
+loopCount: 8
+
+loopCount: 9
+
+loopCount: 10
+
+==> passed
+
+Test 5: Call moves() on unsolvable puzzles
+  *  puzzle2x2-unsolvable1.txt
+loopCount: 3
+
+  *  puzzle2x2-unsolvable2.txt
+loopCount: 4
+
+  *  puzzle3x3-unsolvable1.txt
+loopCount: 1493
+
+  *  puzzle3x3-unsolvable2.txt
+loopCount: 827
+
+  *  puzzle4x4-unsolvable.txt
+loopCount: 21
+
+==> passed
+
+Test 6: Call solution() on unsolvable puzzles
+  *  puzzle2x2-unsolvable1.txt
+loopCount: 3
+
+  *  puzzle2x2-unsolvable2.txt
+loopCount: 4
+
+  *  puzzle3x3-unsolvable1.txt
+loopCount: 1493
+
+  *  puzzle3x3-unsolvable2.txt
+loopCount: 827
+
+  *  puzzle4x4-unsolvable.txt
+loopCount: 21
+
+==> passed
+
+Test 7a: Check that Solver is immutable by testing whether methods
+         return the same value, regardless of order in which called
+  *  puzzle3x3-00.txt
+loopCount: 2
+
+  *  puzzle3x3-01.txt
+loopCount: 3
+
+  *  puzzle3x3-05.txt
+loopCount: 12
+
+  *  puzzle3x3-10.txt
+loopCount: 18
+
+  *  random 2-by-2 solvable boards
+loopCount: 13
+
+loopCount: 13
+
+loopCount: 21
+
+loopCount: 4
+
+loopCount: 6
+
+loopCount: 4
+
+loopCount: 3
+
+loopCount: 21
+
+loopCount: 13
+
+loopCount: 6
+
+==> passed
+
+Test 7b: Check that Solver is immutable by testing whether methods
+         return the same value, regardless of order in which called
+  *  puzzle3x3-unsolvable1.txt
+loopCount: 1493
+
+  *  puzzle3x3-unsolvable2.txt
+loopCount: 827
+
+  *  puzzle4x4-unsolvable.txt
+loopCount: 21
+
+  *  random 2-by-2 unsolvable boards
+loopCount: 3
+
+loopCount: 4
+
+loopCount: 4
+
+loopCount: 2
+
+loopCount: 13
+
+loopCount: 6
+
+loopCount: 10
+
+loopCount: 4
+
+loopCount: 4
+
+loopCount: 13
+
+==> passed
+
+Test 8: Call moves() with more file inputs
+  *  puzzle14.txt
+loopCount: 144
+
+  *  puzzle15.txt
+loopCount: 17
+
+  *  puzzle16.txt
+loopCount: 52
+
+  *  puzzle17.txt
+loopCount: 428
+
+  *  puzzle18.txt
+loopCount: 571
+
+  *  puzzle19.txt
+loopCount: 604
+
+  *  puzzle20.txt
+loopCount: 761
+
+  *  puzzle21.txt
+loopCount: 2861
+
+  *  puzzle22.txt
+loopCount: 1744
+
+  *  puzzle23.txt
+loopCount: 4432
+
+  *  puzzle24.txt
+loopCount: 3442
+
+  *  puzzle25.txt
+loopCount: 6430
+
+  *  puzzle26.txt
+loopCount: 7876
+
+  *  puzzle27.txt
+loopCount: 7092
+
+  *  puzzle28.txt
+loopCount: 13873
+
+  *  puzzle29.txt
+loopCount: 15009
+
+  *  puzzle30.txt
+loopCount: 25464
+
+  *  puzzle31.txt
+loopCount: 24757
+
+==> passed
+
+Test 9: Check whether equals() method in Board is called
+        with an argument of the wrong type
+  *  puzzle00.txt
+loopCount: 2
+
+loopCount: 2
+
+  *  puzzle05.txt
+loopCount: 8
+
+loopCount: 8
+
+  *  puzzle10.txt
+loopCount: 12
+
+loopCount: 12
+
+  *  puzzle15.txt
+loopCount: 17
+
+loopCount: 17
+
+==> passed
+
+Test 10: Check that constructor throws exception if board is null
+==> passed
+
+Test 11: Check for fragile dependence on toString()
+  *  puzzle00.txt
+loopCount: 2
+
+loopCount: 2
+
+loopCount: 2
+
+  *  puzzle04.txt
+loopCount: 6
+
+loopCount: 6
+
+loopCount: 6
+
+  *  puzzle08.txt
+loopCount: 15
+
+loopCount: 15
+
+loopCount: 15
+
+  *  puzzle12.txt
+loopCount: 22
+
+loopCount: 22
+
+loopCount: 22
+
+==> passed
+
+Test 12a: Call moves() with 2-by-2 file inputs
+  *  puzzle2x2-00.txt
+loopCount: 2
+
+  *  puzzle2x2-01.txt
+loopCount: 3
+
+  *  puzzle2x2-02.txt
+loopCount: 4
+
+  *  puzzle2x2-03.txt
+loopCount: 6
+
+  *  puzzle2x2-04.txt
+loopCount: 10
+
+  *  puzzle2x2-05.txt
+loopCount: 13
+
+  *  puzzle2x2-06.txt
+loopCount: 21
+
+==> passed
+
+Test 12b: Call solution() with 2-by-2 file inputs
+  *  puzzle2x2-00.txt
+loopCount: 2
+
+  *  puzzle2x2-01.txt
+loopCount: 3
+
+  *  puzzle2x2-02.txt
+loopCount: 4
+
+  *  puzzle2x2-03.txt
+loopCount: 6
+
+  *  puzzle2x2-04.txt
+loopCount: 10
+
+  *  puzzle2x2-05.txt
+loopCount: 13
+
+  *  puzzle2x2-06.txt
+loopCount: 21
+
+==> passed
+
+Test 13a: Call moves() with 3-by-3 file inputs
+  *  puzzle3x3-00.txt
+loopCount: 2
+
+  *  puzzle3x3-01.txt
+loopCount: 3
+
+  *  puzzle3x3-02.txt
+loopCount: 4
+
+  *  puzzle3x3-03.txt
+loopCount: 5
+
+  *  puzzle3x3-04.txt
+loopCount: 6
+
+  *  puzzle3x3-05.txt
+loopCount: 12
+
+  *  puzzle3x3-06.txt
+loopCount: 8
+
+  *  puzzle3x3-07.txt
+loopCount: 14
+
+  *  puzzle3x3-08.txt
+loopCount: 20
+
+  *  puzzle3x3-09.txt
+loopCount: 11
+
+  *  puzzle3x3-10.txt
+loopCount: 18
+
+  *  puzzle3x3-11.txt
+loopCount: 24
+
+  *  puzzle3x3-12.txt
+loopCount: 59
+
+  *  puzzle3x3-13.txt
+loopCount: 58
+
+  *  puzzle3x3-14.txt
+loopCount: 86
+
+  *  puzzle3x3-15.txt
+loopCount: 151
+
+  *  puzzle3x3-16.txt
+loopCount: 360
+
+  *  puzzle3x3-17.txt
+loopCount: 412
+
+  *  puzzle3x3-18.txt
+loopCount: 935
+
+  *  puzzle3x3-19.txt
+loopCount: 75
+
+  *  puzzle3x3-20.txt
+loopCount: 793
+
+  *  puzzle3x3-21.txt
+loopCount: 1591
+
+  *  puzzle3x3-22.txt
+loopCount: 1744
+
+  *  puzzle3x3-23.txt
+loopCount: 1886
+
+  *  puzzle3x3-24.txt
+loopCount: 7650
+
+  *  puzzle3x3-25.txt
+loopCount: 6218
+
+  *  puzzle3x3-26.txt
+loopCount: 1699
+
+  *  puzzle3x3-27.txt
+loopCount: 19361
+
+  *  puzzle3x3-28.txt
+loopCount: 24006
+
+  *  puzzle3x3-29.txt
+loopCount: 34440
+
+  *  puzzle3x3-30.txt
+loopCount: 27508
+
+==> passed
+
+Test 13b: Call solution() with 3-by-3 file inputs
+  *  puzzle3x3-00.txt
+loopCount: 2
+
+  *  puzzle3x3-01.txt
+loopCount: 3
+
+  *  puzzle3x3-02.txt
+loopCount: 4
+
+  *  puzzle3x3-03.txt
+loopCount: 5
+
+  *  puzzle3x3-04.txt
+loopCount: 6
+
+  *  puzzle3x3-05.txt
+loopCount: 12
+
+  *  puzzle3x3-06.txt
+loopCount: 8
+
+  *  puzzle3x3-07.txt
+loopCount: 14
+
+  *  puzzle3x3-08.txt
+loopCount: 20
+
+  *  puzzle3x3-09.txt
+loopCount: 11
+
+  *  puzzle3x3-10.txt
+loopCount: 18
+
+  *  puzzle3x3-11.txt
+loopCount: 24
+
+  *  puzzle3x3-12.txt
+loopCount: 59
+
+  *  puzzle3x3-13.txt
+loopCount: 58
+
+  *  puzzle3x3-14.txt
+loopCount: 86
+
+  *  puzzle3x3-15.txt
+loopCount: 151
+
+  *  puzzle3x3-16.txt
+loopCount: 360
+
+  *  puzzle3x3-17.txt
+loopCount: 412
+
+  *  puzzle3x3-18.txt
+loopCount: 935
+
+  *  puzzle3x3-19.txt
+loopCount: 75
+
+  *  puzzle3x3-20.txt
+loopCount: 793
+
+  *  puzzle3x3-21.txt
+loopCount: 1591
+
+  *  puzzle3x3-22.txt
+loopCount: 1744
+
+  *  puzzle3x3-23.txt
+loopCount: 1886
+
+  *  puzzle3x3-24.txt
+loopCount: 7650
+
+  *  puzzle3x3-25.txt
+loopCount: 6218
+
+  *  puzzle3x3-26.txt
+loopCount: 1699
+
+  *  puzzle3x3-27.txt
+loopCount: 19361
+
+  *  puzzle3x3-28.txt
+loopCount: 24006
+
+  *  puzzle3x3-29.txt
+loopCount: 34440
+
+  *  puzzle3x3-30.txt
+loopCount: 27508
+
+==> passed
+
+Test 14a: Call moves() with 4-by-4 file inputs
+  *  puzzle4x4-00.txt
+loopCount: 2
+
+  *  puzzle4x4-01.txt
+loopCount: 3
+
+  *  puzzle4x4-02.txt
+loopCount: 4
+
+  *  puzzle4x4-03.txt
+loopCount: 5
+
+  *  puzzle4x4-04.txt
+loopCount: 6
+
+  *  puzzle4x4-05.txt
+loopCount: 7
+
+  *  puzzle4x4-06.txt
+loopCount: 8
+
+  *  puzzle4x4-07.txt
+loopCount: 9
+
+  *  puzzle4x4-08.txt
+loopCount: 10
+
+  *  puzzle4x4-09.txt
+loopCount: 13
+
+  *  puzzle4x4-10.txt
+loopCount: 18
+
+  *  puzzle4x4-11.txt
+loopCount: 24
+
+  *  puzzle4x4-12.txt
+loopCount: 20
+
+  *  puzzle4x4-13.txt
+loopCount: 19
+
+  *  puzzle4x4-14.txt
+loopCount: 43
+
+  *  puzzle4x4-15.txt
+loopCount: 67
+
+  *  puzzle4x4-16.txt
+loopCount: 64
+
+  *  puzzle4x4-17.txt
+loopCount: 80
+
+  *  puzzle4x4-18.txt
+loopCount: 1652
+
+  *  puzzle4x4-19.txt
+loopCount: 150
+
+  *  puzzle4x4-20.txt
+loopCount: 43
+
+  *  puzzle4x4-21.txt
+loopCount: 613
+
+  *  puzzle4x4-22.txt
+loopCount: 164
+
+  *  puzzle4x4-23.txt
+loopCount: 2040
+
+  *  puzzle4x4-24.txt
+loopCount: 380
+
+  *  puzzle4x4-25.txt
+loopCount: 1924
+
+  *  puzzle4x4-26.txt
+loopCount: 2148
+
+  *  puzzle4x4-27.txt
+loopCount: 996
+
+  *  puzzle4x4-28.txt
+loopCount: 21069
+
+  *  puzzle4x4-29.txt
+loopCount: 4805
+
+  *  puzzle4x4-30.txt
+loopCount: 1193
+
+==> passed
+
+Test 14b: Call solution() with 4-by-4 file inputs
+  *  puzzle4x4-00.txt
+loopCount: 2
+
+  *  puzzle4x4-01.txt
+loopCount: 3
+
+  *  puzzle4x4-02.txt
+loopCount: 4
+
+  *  puzzle4x4-03.txt
+loopCount: 5
+
+  *  puzzle4x4-04.txt
+loopCount: 6
+
+  *  puzzle4x4-05.txt
+loopCount: 7
+
+  *  puzzle4x4-06.txt
+loopCount: 8
+
+  *  puzzle4x4-07.txt
+loopCount: 9
+
+  *  puzzle4x4-08.txt
+loopCount: 10
+
+  *  puzzle4x4-09.txt
+loopCount: 13
+
+  *  puzzle4x4-10.txt
+loopCount: 18
+
+  *  puzzle4x4-11.txt
+loopCount: 24
+
+  *  puzzle4x4-12.txt
+loopCount: 20
+
+  *  puzzle4x4-13.txt
+loopCount: 19
+
+  *  puzzle4x4-14.txt
+loopCount: 43
+
+  *  puzzle4x4-15.txt
+loopCount: 67
+
+  *  puzzle4x4-16.txt
+loopCount: 64
+
+  *  puzzle4x4-17.txt
+loopCount: 80
+
+  *  puzzle4x4-18.txt
+loopCount: 1652
+
+  *  puzzle4x4-19.txt
+loopCount: 150
+
+  *  puzzle4x4-20.txt
+loopCount: 43
+
+  *  puzzle4x4-21.txt
+loopCount: 613
+
+  *  puzzle4x4-22.txt
+loopCount: 164
+
+  *  puzzle4x4-23.txt
+loopCount: 2040
+
+  *  puzzle4x4-24.txt
+loopCount: 380
+
+  *  puzzle4x4-25.txt
+loopCount: 1924
+
+  *  puzzle4x4-26.txt
+loopCount: 2148
+
+  *  puzzle4x4-27.txt
+loopCount: 996
+
+  *  puzzle4x4-28.txt
+loopCount: 21069
+
+  *  puzzle4x4-29.txt
+loopCount: 4805
+
+  *  puzzle4x4-30.txt
+loopCount: 1193
+
+==> passed
+
+Test 15: Call moves() with random solvable N-by-N boards
+  *  100 random 2-by-2 boards
+loopCount: 3
+
+loopCount: 13
+
+loopCount: 3
+
+loopCount: 21
+
+loopCount: 13
+
+loopCount: 3
+
+loopCount: 13
+
+loopCount: 13
+
+loopCount: 6
+
+loopCount: 21
+
+loopCount: 13
+
+loopCount: 3
+
+loopCount: 3
+
+loopCount: 9
+
+loopCount: 8
+
+loopCount: 3
+
+loopCount: 2
+
+loopCount: 21
+
+loopCount: 3
+
+loopCount: 2
+
+loopCount: 13
+
+loopCount: 8
+
+loopCount: 21
+
+loopCount: 2
+
+loopCount: 3
+
+loopCount: 3
+
+loopCount: 3
+
+loopCount: 6
+
+loopCount: 5
+
+loopCount: 2
+
+loopCount: 13
+
+loopCount: 10
+
+loopCount: 13
+
+loopCount: 3
+
+loopCount: 21
+
+loopCount: 13
+
+loopCount: 8
+
+loopCount: 10
+
+loopCount: 3
+
+loopCount: 5
+
+loopCount: 21
+
+loopCount: 2
+
+loopCount: 2
+
+loopCount: 2
+
+loopCount: 4
+
+loopCount: 4
+
+loopCount: 21
+
+loopCount: 9
+
+loopCount: 4
+
+loopCount: 21
+
+loopCount: 3
+
+loopCount: 21
+
+loopCount: 9
+
+loopCount: 21
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 9
+
+loopCount: 21
+
+loopCount: 10
+
+loopCount: 10
+
+loopCount: 13
+
+loopCount: 13
+
+loopCount: 6
+
+loopCount: 3
+
+loopCount: 3
+
+loopCount: 13
+
+loopCount: 4
+
+loopCount: 2
+
+loopCount: 4
+
+loopCount: 6
+
+loopCount: 6
+
+loopCount: 6
+
+loopCount: 13
+
+loopCount: 10
+
+loopCount: 10
+
+loopCount: 9
+
+loopCount: 5
+
+loopCount: 21
+
+loopCount: 3
+
+loopCount: 2
+
+loopCount: 2
+
+loopCount: 10
+
+loopCount: 3
+
+loopCount: 4
+
+loopCount: 21
+
+loopCount: 5
+
+loopCount: 13
+
+loopCount: 4
+
+loopCount: 9
+
+loopCount: 4
+
+loopCount: 4
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 3
+
+loopCount: 9
+
+loopCount: 3
+
+loopCount: 9
+
+loopCount: 21
+
+loopCount: 3
+
+loopCount: 13
+
+  *  200 random 3-by-3 boards that are <= 20 moves from goal
+loopCount: 44
+
+loopCount: 153
+
+loopCount: 256
+
+loopCount: 14
+
+loopCount: 407
+
+loopCount: 220
+
+loopCount: 11
+
+loopCount: 880
+
+loopCount: 14
+
+loopCount: 48
+
+loopCount: 4
+
+loopCount: 88
+
+loopCount: 5
+
+loopCount: 112
+
+loopCount: 19
+
+loopCount: 294
+
+loopCount: 232
+
+loopCount: 173
+
+loopCount: 176
+
+loopCount: 15
+
+loopCount: 30
+
+loopCount: 15
+
+loopCount: 54
+
+loopCount: 8
+
+loopCount: 771
+
+loopCount: 101
+
+loopCount: 2
+
+loopCount: 11
+
+loopCount: 12
+
+loopCount: 2
+
+loopCount: 137
+
+loopCount: 15
+
+loopCount: 13
+
+loopCount: 83
+
+loopCount: 2
+
+loopCount: 186
+
+loopCount: 8
+
+loopCount: 54
+
+loopCount: 7
+
+loopCount: 2
+
+loopCount: 24
+
+loopCount: 6
+
+loopCount: 12
+
+loopCount: 989
+
+loopCount: 13
+
+loopCount: 7
+
+loopCount: 36
+
+loopCount: 771
+
+loopCount: 55
+
+loopCount: 2
+
+loopCount: 14
+
+loopCount: 2
+
+loopCount: 58
+
+loopCount: 13
+
+loopCount: 193
+
+loopCount: 28
+
+loopCount: 73
+
+loopCount: 281
+
+loopCount: 3
+
+loopCount: 196
+
+loopCount: 5
+
+loopCount: 23
+
+loopCount: 22
+
+loopCount: 5
+
+loopCount: 33
+
+loopCount: 11
+
+loopCount: 5
+
+loopCount: 8
+
+loopCount: 11
+
+loopCount: 19
+
+loopCount: 3
+
+loopCount: 41
+
+loopCount: 5
+
+loopCount: 55
+
+loopCount: 5
+
+loopCount: 897
+
+loopCount: 32
+
+loopCount: 18
+
+loopCount: 172
+
+loopCount: 8
+
+loopCount: 125
+
+loopCount: 4
+
+loopCount: 9
+
+loopCount: 4
+
+loopCount: 22
+
+loopCount: 26
+
+loopCount: 35
+
+loopCount: 11
+
+loopCount: 3
+
+loopCount: 508
+
+loopCount: 15
+
+loopCount: 4
+
+loopCount: 4
+
+loopCount: 23
+
+loopCount: 21
+
+loopCount: 8
+
+loopCount: 14
+
+loopCount: 6
+
+loopCount: 11
+
+loopCount: 7
+
+loopCount: 6
+
+loopCount: 15
+
+loopCount: 441
+
+loopCount: 160
+
+loopCount: 3
+
+loopCount: 34
+
+loopCount: 9
+
+loopCount: 279
+
+loopCount: 61
+
+loopCount: 862
+
+loopCount: 282
+
+loopCount: 5
+
+loopCount: 2
+
+loopCount: 1154
+
+loopCount: 10
+
+loopCount: 6
+
+loopCount: 2
+
+loopCount: 358
+
+loopCount: 5
+
+loopCount: 13
+
+loopCount: 13
+
+loopCount: 8
+
+loopCount: 2
+
+loopCount: 7
+
+loopCount: 34
+
+loopCount: 207
+
+loopCount: 418
+
+loopCount: 6
+
+loopCount: 7
+
+loopCount: 91
+
+loopCount: 13
+
+loopCount: 2
+
+loopCount: 5
+
+loopCount: 4
+
+loopCount: 220
+
+loopCount: 151
+
+loopCount: 127
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 3
+
+loopCount: 57
+
+loopCount: 55
+
+loopCount: 3
+
+loopCount: 52
+
+loopCount: 27
+
+loopCount: 72
+
+loopCount: 14
+
+loopCount: 199
+
+loopCount: 5
+
+loopCount: 51
+
+loopCount: 22
+
+loopCount: 17
+
+loopCount: 91
+
+loopCount: 47
+
+loopCount: 4
+
+loopCount: 6
+
+loopCount: 6
+
+loopCount: 8
+
+loopCount: 49
+
+loopCount: 7
+
+loopCount: 160
+
+loopCount: 4
+
+loopCount: 6
+
+loopCount: 2
+
+loopCount: 26
+
+loopCount: 106
+
+loopCount: 8
+
+loopCount: 9
+
+loopCount: 94
+
+loopCount: 30
+
+loopCount: 424
+
+loopCount: 375
+
+loopCount: 216
+
+loopCount: 19
+
+loopCount: 9
+
+loopCount: 88
+
+loopCount: 5
+
+loopCount: 214
+
+loopCount: 63
+
+loopCount: 6
+
+loopCount: 24
+
+loopCount: 94
+
+loopCount: 11
+
+loopCount: 5
+
+loopCount: 7
+
+loopCount: 3
+
+loopCount: 8
+
+loopCount: 28
+
+loopCount: 223
+
+loopCount: 71
+
+loopCount: 386
+
+loopCount: 155
+
+loopCount: 14
+
+loopCount: 234
+
+loopCount: 17
+
+loopCount: 22
+
+loopCount: 2360
+
+loopCount: 5
+
+loopCount: 24
+
+loopCount: 10
+
+  *  200 random 4-by-4 boards that are <= 20 moves from goal
+loopCount: 7
+
+loopCount: 28
+
+loopCount: 11
+
+loopCount: 7
+
+loopCount: 8
+
+loopCount: 42
+
+loopCount: 3
+
+loopCount: 48
+
+loopCount: 5
+
+loopCount: 4
+
+loopCount: 156
+
+loopCount: 12
+
+loopCount: 25
+
+loopCount: 8
+
+loopCount: 66
+
+loopCount: 17
+
+loopCount: 49
+
+loopCount: 4
+
+loopCount: 35
+
+loopCount: 128
+
+loopCount: 3
+
+loopCount: 2
+
+loopCount: 166
+
+loopCount: 8
+
+loopCount: 55
+
+loopCount: 3
+
+loopCount: 45
+
+loopCount: 3
+
+loopCount: 5
+
+loopCount: 42
+
+loopCount: 4
+
+loopCount: 20
+
+loopCount: 3
+
+loopCount: 234
+
+loopCount: 19
+
+loopCount: 8
+
+loopCount: 50
+
+loopCount: 17
+
+loopCount: 9
+
+loopCount: 8
+
+loopCount: 56
+
+loopCount: 22
+
+loopCount: 30
+
+loopCount: 6
+
+loopCount: 10
+
+loopCount: 5
+
+loopCount: 13
+
+loopCount: 7
+
+loopCount: 13
+
+loopCount: 2
+
+loopCount: 37
+
+loopCount: 16
+
+loopCount: 25
+
+loopCount: 7
+
+loopCount: 12
+
+loopCount: 2
+
+loopCount: 177
+
+loopCount: 97
+
+loopCount: 42
+
+loopCount: 5
+
+loopCount: 46
+
+loopCount: 15
+
+loopCount: 150
+
+loopCount: 4
+
+loopCount: 6
+
+loopCount: 38
+
+loopCount: 15
+
+loopCount: 68
+
+loopCount: 47
+
+loopCount: 511
+
+loopCount: 21
+
+loopCount: 3
+
+loopCount: 103
+
+loopCount: 7
+
+loopCount: 10
+
+loopCount: 265
+
+loopCount: 50
+
+loopCount: 6
+
+loopCount: 45
+
+loopCount: 6
+
+loopCount: 6
+
+loopCount: 179
+
+loopCount: 17
+
+loopCount: 227
+
+loopCount: 4
+
+loopCount: 13
+
+loopCount: 4
+
+loopCount: 27
+
+loopCount: 16
+
+loopCount: 17
+
+loopCount: 112
+
+loopCount: 203
+
+loopCount: 3
+
+loopCount: 6
+
+loopCount: 75
+
+loopCount: 6
+
+loopCount: 326
+
+loopCount: 8
+
+loopCount: 4
+
+loopCount: 23
+
+loopCount: 3
+
+loopCount: 178
+
+loopCount: 63
+
+loopCount: 31
+
+loopCount: 4
+
+loopCount: 11
+
+loopCount: 38
+
+loopCount: 18
+
+loopCount: 14
+
+loopCount: 24
+
+loopCount: 138
+
+loopCount: 41
+
+loopCount: 13
+
+loopCount: 9
+
+loopCount: 9
+
+loopCount: 2
+
+loopCount: 36
+
+loopCount: 3
+
+loopCount: 27
+
+loopCount: 47
+
+loopCount: 33
+
+loopCount: 2
+
+loopCount: 28
+
+loopCount: 1877
+
+loopCount: 5
+
+loopCount: 86
+
+loopCount: 6
+
+loopCount: 8
+
+loopCount: 7
+
+loopCount: 3
+
+loopCount: 85
+
+loopCount: 229
+
+loopCount: 129
+
+loopCount: 35
+
+loopCount: 292
+
+loopCount: 29
+
+loopCount: 277
+
+loopCount: 41
+
+loopCount: 29
+
+loopCount: 33
+
+loopCount: 8
+
+loopCount: 132
+
+loopCount: 74
+
+loopCount: 35
+
+loopCount: 3
+
+loopCount: 33
+
+loopCount: 13
+
+loopCount: 13
+
+loopCount: 8
+
+loopCount: 433
+
+loopCount: 15
+
+loopCount: 7
+
+loopCount: 26
+
+loopCount: 39
+
+loopCount: 22
+
+loopCount: 11
+
+loopCount: 153
+
+loopCount: 4
+
+loopCount: 3
+
+loopCount: 45
+
+loopCount: 14
+
+loopCount: 17
+
+loopCount: 18
+
+loopCount: 2
+
+loopCount: 3
+
+loopCount: 36
+
+loopCount: 45
+
+loopCount: 4
+
+loopCount: 15
+
+loopCount: 8
+
+loopCount: 8
+
+loopCount: 3
+
+loopCount: 2
+
+loopCount: 15
+
+loopCount: 5
+
+loopCount: 10
+
+loopCount: 4
+
+loopCount: 40
+
+loopCount: 7
+
+loopCount: 7
+
+loopCount: 5
+
+loopCount: 253
+
+loopCount: 40
+
+loopCount: 74
+
+loopCount: 3
+
+loopCount: 15
+
+loopCount: 6
+
+loopCount: 164
+
+loopCount: 10
+
+loopCount: 6
+
+loopCount: 271
+
+loopCount: 7
+
+loopCount: 14
+
+loopCount: 5
+
+loopCount: 13
+
+loopCount: 98
+
+loopCount: 268
+
+loopCount: 17
+
+loopCount: 10
+
+loopCount: 6
+
+  *  200 random 5-by-5 boards that are <= 20 moves from goal
+loopCount: 71
+
+loopCount: 56
+
+loopCount: 19
+
+loopCount: 5
+
+loopCount: 5
+
+loopCount: 12
+
+loopCount: 10
+
+loopCount: 17
+
+loopCount: 24
+
+loopCount: 15
+
+loopCount: 12
+
+loopCount: 4
+
+loopCount: 23
+
+loopCount: 17
+
+loopCount: 122
+
+loopCount: 30
+
+loopCount: 4
+
+loopCount: 2
+
+loopCount: 41
+
+loopCount: 3
+
+loopCount: 14
+
+loopCount: 112
+
+loopCount: 5
+
+loopCount: 22
+
+loopCount: 20
+
+loopCount: 2
+
+loopCount: 18
+
+loopCount: 17
+
+loopCount: 275
+
+loopCount: 68
+
+loopCount: 4
+
+loopCount: 23
+
+loopCount: 45
+
+loopCount: 8
+
+loopCount: 5
+
+loopCount: 79
+
+loopCount: 5
+
+loopCount: 2
+
+loopCount: 38
+
+loopCount: 18
+
+loopCount: 35
+
+loopCount: 2
+
+loopCount: 27
+
+loopCount: 34
+
+loopCount: 2
+
+loopCount: 31
+
+loopCount: 37
+
+loopCount: 4
+
+loopCount: 6
+
+loopCount: 6
+
+loopCount: 25
+
+loopCount: 59
+
+loopCount: 38
+
+loopCount: 2
+
+loopCount: 65
+
+loopCount: 2
+
+loopCount: 9
+
+loopCount: 34
+
+loopCount: 14
+
+loopCount: 74
+
+loopCount: 20
+
+loopCount: 20
+
+loopCount: 8
+
+loopCount: 5
+
+loopCount: 17
+
+loopCount: 4
+
+loopCount: 13
+
+loopCount: 12
+
+loopCount: 22
+
+loopCount: 36
+
+loopCount: 7
+
+loopCount: 2
+
+loopCount: 54
+
+loopCount: 66
+
+loopCount: 7
+
+loopCount: 5
+
+loopCount: 6
+
+loopCount: 2
+
+loopCount: 21
+
+loopCount: 5
+
+loopCount: 25
+
+loopCount: 111
+
+loopCount: 2
+
+loopCount: 66
+
+loopCount: 20
+
+loopCount: 41
+
+loopCount: 18
+
+loopCount: 5
+
+loopCount: 36
+
+loopCount: 83
+
+loopCount: 13
+
+loopCount: 16
+
+loopCount: 9
+
+loopCount: 3
+
+loopCount: 26
+
+loopCount: 3
+
+loopCount: 5
+
+loopCount: 12
+
+loopCount: 9
+
+loopCount: 6
+
+loopCount: 107
+
+loopCount: 34
+
+loopCount: 106
+
+loopCount: 205
+
+loopCount: 14
+
+loopCount: 114
+
+loopCount: 2
+
+loopCount: 10
+
+loopCount: 892
+
+loopCount: 7
+
+loopCount: 3
+
+loopCount: 13
+
+loopCount: 78
+
+loopCount: 7
+
+loopCount: 5
+
+loopCount: 37
+
+loopCount: 19
+
+loopCount: 8
+
+loopCount: 63
+
+loopCount: 12
+
+loopCount: 57
+
+loopCount: 268
+
+loopCount: 9
+
+loopCount: 10
+
+loopCount: 17
+
+loopCount: 394
+
+loopCount: 7
+
+loopCount: 2
+
+loopCount: 10
+
+loopCount: 66
+
+loopCount: 8
+
+loopCount: 15
+
+loopCount: 505
+
+loopCount: 11
+
+loopCount: 34
+
+loopCount: 8
+
+loopCount: 79
+
+loopCount: 9
+
+loopCount: 8
+
+loopCount: 5
+
+loopCount: 16
+
+loopCount: 3
+
+loopCount: 10
+
+loopCount: 9
+
+loopCount: 3
+
+loopCount: 57
+
+loopCount: 13
+
+loopCount: 9
+
+loopCount: 40
+
+loopCount: 20
+
+loopCount: 32
+
+loopCount: 2
+
+loopCount: 6
+
+loopCount: 18
+
+loopCount: 3
+
+loopCount: 23
+
+loopCount: 8
+
+loopCount: 4
+
+loopCount: 14
+
+loopCount: 44
+
+loopCount: 31
+
+loopCount: 114
+
+loopCount: 6
+
+loopCount: 125
+
+loopCount: 14
+
+loopCount: 17
+
+loopCount: 17
+
+loopCount: 102
+
+loopCount: 7
+
+loopCount: 116
+
+loopCount: 16
+
+loopCount: 7
+
+loopCount: 117
+
+loopCount: 34
+
+loopCount: 2
+
+loopCount: 8
+
+loopCount: 28
+
+loopCount: 3
+
+loopCount: 28
+
+loopCount: 2
+
+loopCount: 10
+
+loopCount: 19
+
+loopCount: 52
+
+loopCount: 23
+
+loopCount: 3
+
+loopCount: 18
+
+loopCount: 33
+
+loopCount: 5
+
+loopCount: 6
+
+loopCount: 11
+
+loopCount: 3
+
+loopCount: 17
+
+loopCount: 12
+
+loopCount: 3
+
+loopCount: 6
+
+loopCount: 67
+
+loopCount: 48
+
+loopCount: 4
+
+loopCount: 13
+
+loopCount: 12
+
+==> passed
+
+
+Total: 20/20 tests passed!
+
+
+================================================================
+
+******************************************************************************
+*          MEMORY
+******************************************************************************
+
+Computing memory of Board
+*-----------------------------------------------------------
+Running 8 total tests.
+
+Memory usage of an N-by-N board
+
+              N       student (bytes)    reference (bytes)
+----------------------------------------------------------
+=> passed     4           128                  240
+=> passed     8           320                  560
+=> passed    12           640                 1008
+=> passed    16          1088                 1584
+=> passed    20          1664                 2288
+=> passed    36          5248                 6384
+=> passed    72         20800                23088
+=> passed   120         57664                61488
+==> 8/8 tests passed
+
+Total: 8/8 tests passed!
+
+Student   memory = 4.00 N^2 + 0.00 N + 64.00   (R^2 = 1.000)
+Reference memory = 4.00 N^2 + 32.00 N + 48.00   (R^2 = 1.000)
+
+================================================================
+
+
+
+******************************************************************************
+*          TIMING
+******************************************************************************
+
+Timing Solver
+*-----------------------------------------------------------
+Running 17 total tests.
+
+Timing tests use your implementation of Board.java and Solver.java.
+Maximum time allowed per puzzle is 10 seconds.
+
+               filename   N    seconds    insert()            delMin()         max PQ size
+---------------------------------------------------------------------------------------------
+loopCount: 737
+
+=> passed  puzzle20.txt   3     0.03       1224                 736                 489
+loopCount: 2994
+
+=> passed  puzzle21.txt   3     0.03       5084                2993                2092
+loopCount: 2034
+
+=> passed  puzzle22.txt   3     0.01       3431                2033                1399
+loopCount: 5543
+
+=> passed  puzzle23.txt   3     0.03       9336                5542                3795
+loopCount: 3808
+
+=> passed  puzzle24.txt   3     0.02       6314                3807                2508
+loopCount: 9591
+
+=> passed  puzzle25.txt   3     0.04      16085                9590                6496
+loopCount: 5348
+
+=> passed  puzzle26.txt   3     0.01       8922                5347                3576
+loopCount: 12691
+
+=> passed  puzzle27.txt   3     0.03      21110               12690                8421
+loopCount: 25775
+
+=> passed  puzzle28.txt   3     0.06      43315               25774               17542
+loopCount: 7298
+
+=> passed  puzzle29.txt   3     0.02      12088                7297                4792
+loopCount: 48671
+
+=> passed  puzzle30.txt   3     0.11      81954               48670               33285
+loopCount: 52635
+
+=> passed  puzzle31.txt   3     0.15      87643               52634               35010
+loopCount: 212472
+
+=> passed  puzzle34.txt   4     0.82     442618              212471              230148
+loopCount: 72867
+
+=> passed  puzzle37.txt   4     0.28     151638               72866               78773
+loopCount: 83220
+
+=> passed  puzzle39.txt   4     0.33     169826               83219               86608
+loopCount: 28091
+
+=> passed  puzzle41.txt   5     0.15      65797               28090               37708
+loopCount: 264436
+
+=> passed  puzzle44.txt   5     1.38     596735              264435              332301
+==> 17/17 tests passed
+
+Total: 17/17 tests passed!
+
+================================================================
