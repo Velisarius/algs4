@@ -1,0 +1,253 @@
+Assessment Summary
+Compilation:  PASSED
+Style:        PASSED
+Findbugs:     No potential bugs found.
+API:          PASSED
+
+Correctness:  15/15 tests passed
+Memory:       4/4 tests passed
+Timing:       1/1 tests passed
+
+Aggregate score: 100.00% [Correctness: 65%, Memory: 10%, Timing: 25%, Style: 0%]
+Assessment Details
+The following files were submitted:
+----------------------------------
+total 12K
+-rw-r--r-- 1 5.7K Apr 14 19:20 BaseballElimination.java
+-rw-r--r-- 1 1.6K Apr 14 19:20 studentSubmission.zip
+
+
+********************************************************************************
+*          COMPILING                                                           *
+********************************************************************************
+
+
+% javac BaseballElimination.java
+*-----------------------------------------------------------
+
+================================================================
+
+
+
+% checkstyle *.java
+*-----------------------------------------------------------
+
+================================================================
+
+
+% findbugs *.class
+*-----------------------------------------------------------
+
+================================================================
+
+
+Testing the APIs of your programs.
+*-----------------------------------------------------------
+BaseballElimination:
+
+================================================================
+
+
+******************************************************************************
+*          CORRECTNESS
+******************************************************************************
+
+Testing methods in BaseballElimination
+*-----------------------------------------------------------
+Running 15 total tests.
+
+Test 1: calls to numberOfTeams()
+  *  teams4.txt
+  *  teams5.txt
+  *  teams8.txt
+  *  teams10.txt
+  *  teams29.txt
+  *  teams48.txt
+==> passed
+
+Test 2: calls to teams()
+  *  teams4.txt
+  *  teams5.txt
+  *  teams8.txt
+  *  teams10.txt
+  *  teams29.txt
+  *  teams48.txt
+==> passed
+
+Test 3: calls to wins()
+  *  teams4.txt
+  *  teams5.txt
+  *  teams8.txt
+  *  teams10.txt
+  *  teams29.txt
+  *  teams48.txt
+==> passed
+
+Test 4: calls to losses()
+  *  teams4.txt
+  *  teams5.txt
+  *  teams8.txt
+  *  teams10.txt
+  *  teams29.txt
+  *  teams48.txt
+==> passed
+
+Test 5: calls to remaining()
+  *  teams4.txt
+  *  teams5.txt
+  *  teams8.txt
+  *  teams10.txt
+  *  teams29.txt
+  *  teams48.txt
+==> passed
+
+Test 6: calls to against()
+  *  teams4.txt
+  *  teams5.txt
+  *  teams8.txt
+  *  teams10.txt
+  *  teams29.txt
+  *  teams48.txt
+==> passed
+
+Test 7: calls to isEliminated()
+  *  teams4.txt
+  *  teams4a.txt
+  *  teams4b.txt
+  *  teams5.txt
+  *  teams5a.txt
+  *  teams5b.txt
+  *  teams5c.txt
+  *  teams7.txt
+  *  teams8.txt
+  *  teams10.txt
+  *  teams12.txt
+  *  teams24.txt
+  *  teams29.txt
+  *  teams30.txt
+  *  teams32.txt
+  *  teams36.txt
+  *  teams42.txt
+  *  teams48.txt
+  *  teams12-allgames.txt
+==> passed
+
+Test 8: check that isEliminated() is consistent with certificateOfElimination()
+  *  teams4.txt
+  *  teams5.txt
+  *  teams8.txt
+  *  teams10.txt
+  *  teams29.txt
+  *  teams48.txt
+==> passed
+
+Test 9: calls to certificateOfElimination()
+  *  teams4.txt
+  *  teams4a.txt
+  *  teams4b.txt
+  *  teams5.txt
+  *  teams5a.txt
+  *  teams5b.txt
+  *  teams5c.txt
+  *  teams7.txt
+  *  teams8.txt
+  *  teams10.txt
+  *  teams12.txt
+  *  teams24.txt
+  *  teams29.txt
+  *  teams30.txt
+  *  teams32.txt
+  *  teams36.txt
+  *  teams42.txt
+  *  teams48.txt
+  *  teams12-allgames.txt
+==> passed
+
+Test 10: only 1 team in division
+  *  teams1.txt
+  *  teams1.txt
+  *  teams1.txt
+  *  teams1.txt
+  *  teams1.txt
+  *  teams1.txt
+  *  teams1.txt
+==> passed
+
+Test 11: check immutability by calling certificateOfElimination() both before
+         and after calling isEliminated() and verifying that the results match
+  *  teams4.txt
+  *  teams5.txt
+  *  teams29.txt
+==> passed
+
+Test 12: check that certificateOfElimination() returns null
+  *  teams4.txt
+  *  teams5.txt
+==> passed
+
+Test 13: check for invalid arguments
+  *  teams4.txt
+  *  teams5.txt
+==> passed
+
+Test 14: check for dependence on reference equality of strings
+==> passed
+
+Test 15: check whether two Baseball objects can be created at the same time
+  *  teams4.txt and teams5.txt
+  *  teams5.txt and teams7.txt
+==> passed
+
+
+Total: 15/15 tests passed!
+
+
+================================================================
+
+******************************************************************************
+*          TIMING
+******************************************************************************
+
+Timing BaseballElimination
+*-----------------------------------------------------------
+Running 1 total tests.
+
+    N   constructor isEliminated() + certificateOfElimination()
+----------------------------------------------------------------
+   30       0.39       0.00
+   36       0.70       0.00
+   42       1.35       0.00
+   48       2.63       0.00
+   54       4.23       0.00
+   60       6.55       0.00
+time = 2.59e-07 * N^4.16  (R^2 = 1.00)
+
+Total: 1/1 tests passed!
+
+================================================================
+
+
+
+******************************************************************************
+*          MEMORY
+******************************************************************************
+
+Computing memory of BaseballElimination
+*-----------------------------------------------------------
+Running 4 total tests.
+
+Student   vertices     = 0.50 N^2 + 0.50 N + 2.00   (R^2 = 1.000)
+Reference vertices     = 0.50 N^2 + -0.50 N + 3.00   (R^2 = 1.000)
+=> passed
+Student   edges        = 1.50 N^2 + -3.50 N + 2.00   (R^2 = 1.000)
+Reference edges        = 1.50 N^2 + -3.50 N + 2.00   (R^2 = 1.000)
+=> passed
+Student   memory of G  = 176.00 N^2 + -344.00 N + 344.00   (R^2 = 1.000)
+Reference memory of G  = 176.00 N^2 + -384.00 N + 384.00   (R^2 = 1.000)
+=> passed
+Student   memory       = 3.83 N^2 + 209.44 N + 328.86   (R^2 = 1.000)
+Reference memory       = 3.99 N^2 + 222.25 N + 396.00   (R^2 = 1.000)
+=> passed
+Total: 4/4 tests passed!
+
+================================================================
